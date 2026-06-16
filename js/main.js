@@ -6,7 +6,8 @@ import {
 from "./notes.js";
 
 import {
-    renderNoteList
+    renderNoteList,
+    updateCharCount
 }
 from "./ui.js";
 
@@ -29,6 +30,8 @@ let currentNoteId = null;
 
 renderNoteList(selectNote);
 
+updateCharCount("");
+
 newNoteBtn.addEventListener(
     "click",
     () => {
@@ -38,8 +41,21 @@ newNoteBtn.addEventListener(
         titleInput.value = "";
         contentInput.value = "";
 
+        updateCharCount("");
+
         editor.classList.remove(
             "hidden"
+        );
+
+    }
+);
+
+contentInput.addEventListener(
+    "input",
+    () => {
+
+        updateCharCount(
+            contentInput.value
         );
 
     }
@@ -98,6 +114,10 @@ function selectNote(id) {
 
     contentInput.value =
         note.content;
+
+    updateCharCount(
+        note.content
+    );
 
     editor.classList.remove(
         "hidden"
