@@ -19,8 +19,30 @@ export function renderNoteList(onSelect) {
         const li =
             document.createElement("li");
 
-        li.textContent =
+        const title =
+            document.createElement("div");
+
+        title.className =
+            "note-title";
+
+        title.textContent =
             note.title || "無題";
+
+        const preview =
+            document.createElement("div");
+
+        preview.className =
+            "note-preview";
+
+        const firstLine =
+            (note.content || "")
+                .split("\n")[0];
+
+        preview.textContent =
+            firstLine;
+
+        li.appendChild(title);
+        li.appendChild(preview);
 
         li.addEventListener(
             "click",
