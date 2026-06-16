@@ -54,34 +54,8 @@ main{
     text-overflow:ellipsis;
 }
 
-.editor{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    padding:16px;
-    gap:12px;
-    overflow:hidden;
-}
-
 .hidden{
     display:none;
-}
-
-#titleInput{
-    padding:12px;
-    font-size:16px;
-}
-
-#contentInput{
-    height:320px;
-    padding:12px;
-    resize:none;
-    font-size:16px;
-    overflow-y:auto;
-}
-
-#saveBtn{
-    padding:12px;
 }
 
 #listScreen{
@@ -97,4 +71,29 @@ main{
     padding:16px;
     gap:12px;
     overflow:hidden;
+}
+
+.editor-buttons{
+    display:flex;
+    gap:12px;
+}
+
+#backBtn,
+#saveBtn{
+    flex:1;
+    height:56px;
+    font-size:16px;
+}
+
+#titleInput{
+    padding:12px;
+    font-size:16px;
+}
+
+#contentInput{
+    height:320px;
+    padding:12px;
+    resize:none;
+    font-size:16px;
+    overflow-y:auto;
 }
