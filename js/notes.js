@@ -42,3 +42,12 @@ export function updateNote(id, title, content) {
 
     saveNotes(notes);
 }
+
+export function deleteNote(id) {
+
+    notes = notes.filter(
+        note => note.id !== id
+    );
+
+    saveNotes(notes);
+}
