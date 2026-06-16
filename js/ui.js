@@ -19,6 +19,16 @@ export function renderNoteList(onSelect) {
         const li =
             document.createElement("li");
 
+        const lines =
+            (note.content || "")
+                .split("\n");
+
+        const titleText =
+            lines[0] || "無題";
+
+        const previewText =
+            lines.slice(1).join(" ");
+
         const title =
             document.createElement("div");
 
@@ -26,7 +36,7 @@ export function renderNoteList(onSelect) {
             "note-title";
 
         title.textContent =
-            note.title || "無題";
+            titleText;
 
         const preview =
             document.createElement("div");
@@ -34,12 +44,8 @@ export function renderNoteList(onSelect) {
         preview.className =
             "note-preview";
 
-        const firstLine =
-            (note.content || "")
-                .split("\n")[0];
-
         preview.textContent =
-            firstLine;
+            previewText;
 
         li.appendChild(title);
         li.appendChild(preview);
