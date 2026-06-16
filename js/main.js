@@ -17,17 +17,17 @@ const newNoteBtn =
 const editor =
     document.getElementById("editor");
 
-const titleInput =
-    document.getElementById("titleInput");
-
 const contentInput =
     document.getElementById("contentInput");
 
 const saveBtn =
     document.getElementById("saveBtn");
-    
+
 const backBtn =
     document.getElementById("backBtn");
+
+const listScreen =
+    document.getElementById("listScreen");
 
 let currentNoteId = null;
 
@@ -35,16 +35,12 @@ renderNoteList(selectNote);
 
 updateCharCount("");
 
-const listScreen =
-    document.getElementById("listScreen");
-
 newNoteBtn.addEventListener(
     "click",
     () => {
 
         currentNoteId = null;
 
-        titleInput.value = "";
         contentInput.value = "";
 
         updateCharCount("");
@@ -56,8 +52,11 @@ newNoteBtn.addEventListener(
         editor.classList.remove(
             "hidden"
         );
-        
-        backBtn.addEventListener(
+
+    }
+);
+
+backBtn.addEventListener(
     "click",
     () => {
 
@@ -68,9 +67,6 @@ newNoteBtn.addEventListener(
         listScreen.classList.remove(
             "hidden"
         );
-
-    }
-);
 
     }
 );
@@ -90,11 +86,12 @@ saveBtn.addEventListener(
     "click",
     () => {
 
-        const title =
-            titleInput.value;
-
         const content =
             contentInput.value;
+
+        const title =
+            content
+                .split("\n")[0] || "";
 
         if (currentNoteId) {
 
@@ -119,14 +116,14 @@ saveBtn.addEventListener(
         renderNoteList(
             selectNote
         );
-        
-        editor.classList.add(
-    "hidden"
-);
 
-listScreen.classList.remove(
-    "hidden"
-);
+        editor.classList.add(
+            "hidden"
+        );
+
+        listScreen.classList.remove(
+            "hidden"
+        );
 
     }
 );
@@ -139,19 +136,16 @@ function selectNote(id) {
     if (!note) {
         return;
     }
-    
-    listScreen.classList.add(
-    "hidden"
-);
 
-editor.classList.remove(
-    "hidden"
-);
+    listScreen.classList.add(
+        "hidden"
+    );
+
+    editor.classList.remove(
+        "hidden"
+    );
 
     currentNoteId = id;
-
-    titleInput.value =
-        note.title;
 
     contentInput.value =
         note.content;
