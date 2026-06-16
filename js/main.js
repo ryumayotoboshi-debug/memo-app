@@ -56,6 +56,21 @@ newNoteBtn.addEventListener(
         editor.classList.remove(
             "hidden"
         );
+        
+        backBtn.addEventListener(
+    "click",
+    () => {
+
+        editor.classList.add(
+            "hidden"
+        );
+
+        listScreen.classList.remove(
+            "hidden"
+        );
+
+    }
+);
 
     }
 );
