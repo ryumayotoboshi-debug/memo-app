@@ -1,1 +1,50 @@
-/*HTML*/
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メモ帳</title>
+
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>メモ帳</h1>
+</header>
+
+<main>
+
+    <section class="sidebar">
+        <button id="newNoteBtn">
+            新規メモ
+        </button>
+
+        <ul id="noteList"></ul>
+    </section>
+
+    <section class="editor hidden" id="editor">
+
+        <input
+            type="text"
+            id="titleInput"
+            placeholder="タイトル"
+        >
+
+        <textarea
+            id="contentInput"
+            placeholder="本文"
+        ></textarea>
+
+        <button id="saveBtn">
+            保存
+        </button>
+
+    </section>
+
+</main>
+
+<script type="module" src="./js/main.js"></script>
+
+</body>
+</html>
