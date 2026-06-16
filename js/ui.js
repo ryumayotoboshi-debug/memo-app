@@ -5,6 +5,9 @@ import {
 const noteList =
     document.getElementById("noteList");
 
+const charCount =
+    document.getElementById("charCount");
+
 export function renderNoteList(onSelect) {
 
     noteList.innerHTML = "";
@@ -27,5 +30,12 @@ export function renderNoteList(onSelect) {
         noteList.appendChild(li);
 
     });
+
+}
+
+export function updateCharCount(text) {
+
+    charCount.textContent =
+        `文字数：${text.length}`;
 
 }
