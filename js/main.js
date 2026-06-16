@@ -126,8 +126,12 @@ function selectNote(id) {
         note.content
     );
 
-    editor.classList.remove(
-        "hidden"
-    );
+    listScreen.classList.add(
+    "hidden"
+);
+
+editor.classList.remove(
+    "hidden"
+);
 
 }
