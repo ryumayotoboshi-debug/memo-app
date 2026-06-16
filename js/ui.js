@@ -63,7 +63,12 @@ export function renderNoteList(onSelect) {
 
 export function updateCharCount(text) {
 
+    const count =
+        text
+            .replace(/\s/g, "")
+            .length;
+
     charCount.textContent =
-        `文字数：${text.length}`;
+        `文字数：${count}`;
 
 }
