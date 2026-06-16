@@ -25,6 +25,9 @@ const contentInput =
 
 const saveBtn =
     document.getElementById("saveBtn");
+    
+const backBtn =
+    document.getElementById("backBtn");
 
 let currentNoteId = null;
 
