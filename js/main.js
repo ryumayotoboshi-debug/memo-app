@@ -139,6 +139,14 @@ function selectNote(id) {
     if (!note) {
         return;
     }
+    
+    listScreen.classList.add(
+    "hidden"
+);
+
+editor.classList.remove(
+    "hidden"
+);
 
     currentNoteId = id;
 
@@ -151,13 +159,5 @@ function selectNote(id) {
     updateCharCount(
         note.content
     );
-
-    listScreen.classList.add(
-    "hidden"
-);
-
-editor.classList.remove(
-    "hidden"
-);
 
 }
