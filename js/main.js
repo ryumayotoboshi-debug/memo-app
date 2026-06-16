@@ -32,6 +32,9 @@ renderNoteList(selectNote);
 
 updateCharCount("");
 
+const listScreen =
+    document.getElementById("listScreen");
+
 newNoteBtn.addEventListener(
     "click",
     () => {
@@ -42,6 +45,10 @@ newNoteBtn.addEventListener(
         contentInput.value = "";
 
         updateCharCount("");
+
+        listScreen.classList.add(
+            "hidden"
+        );
 
         editor.classList.remove(
             "hidden"
