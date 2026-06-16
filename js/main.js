@@ -1,7 +1,8 @@
 import {
     addNote,
     updateNote,
-    getNote
+    getNote,
+    deleteNote
 }
 from "./notes.js";
 
@@ -22,6 +23,9 @@ const contentInput =
 
 const saveBtn =
     document.getElementById("saveBtn");
+
+const deleteBtn =
+    document.getElementById("deleteBtn");
 
 const backBtn =
     document.getElementById("backBtn");
@@ -112,6 +116,46 @@ saveBtn.addEventListener(
             currentNoteId =
                 note.id;
         }
+
+        renderNoteList(
+            selectNote
+        );
+
+        editor.classList.add(
+            "hidden"
+        );
+
+        listScreen.classList.remove(
+            "hidden"
+        );
+
+    }
+);
+
+deleteBtn.addEventListener(
+    "click",
+    () => {
+
+        if (!currentNoteId) {
+            return;
+        }
+
+        const result =
+            confirm(
+                "このメモを削除しますか？"
+            );
+
+        if (!result) {
+            return;
+        }
+
+        deleteNote(
+            currentNoteId
+        );
+
+        currentNoteId = null;
+
+        contentInput.value = "";
 
         renderNoteList(
             selectNote
