@@ -1,0 +1,69 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:sans-serif;
+    height:100vh;
+}
+
+header{
+    padding:16px;
+    border-bottom:1px solid #ccc;
+}
+
+main{
+    display:flex;
+    height:calc(100vh - 65px);
+}
+
+.sidebar{
+    width:250px;
+    border-right:1px solid #ccc;
+    padding:16px;
+}
+
+#newNoteBtn{
+    width:100%;
+    padding:12px;
+    margin-bottom:16px;
+}
+
+#noteList{
+    list-style:none;
+}
+
+#noteList li{
+    padding:10px;
+    cursor:pointer;
+    border-bottom:1px solid #eee;
+}
+
+.editor{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding:16px;
+    gap:12px;
+}
+
+.hidden{
+    display:none;
+}
+
+#titleInput{
+    padding:12px;
+    font-size:18px;
+}
+
+#contentInput{
+    flex:1;
+    padding:12px;
+    resize:none;
+}
+
+#saveBtn{
+    padding:12px;
+}
