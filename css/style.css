@@ -98,6 +98,7 @@ main{
 
 #contentInput{
     flex:1;
+    min-height:500px;
     padding:12px;
     resize:none;
     font-size:16px;
