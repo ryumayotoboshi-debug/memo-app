@@ -97,8 +97,7 @@ main{
 }
 
 #contentInput{
-    flex:1;
-    min-height:400px;
+    height:400px;
     padding:12px;
     resize:none;
     font-size:16px;
