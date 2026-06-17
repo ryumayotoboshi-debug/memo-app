@@ -118,16 +118,8 @@ saveBtn.addEventListener(
         }
 
         renderNoteList(
-            selectNote
-        );
-
-        editor.classList.add(
-            "hidden"
-        );
-
-        listScreen.classList.remove(
-            "hidden"
-        );
+    selectNote
+);
 
     }
 );
